@@ -1,0 +1,33 @@
+﻿@model List<WorkDto>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>List of Works</h1>
+
+<div class="container my-2">
+    <div class="my-2">
+        <a asp-action="Create" class="btn btn-primary">Add Task</a>
+    </div>
+    <table class="table table-hover table-bordered table-sm">
+        <thead>
+            <tr>
+                <th>Task:</th>
+                <th>Completed:</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var work in Model)
+            {
+                <tr>
+                    <td>@work.Title</td>
+                    <td>@(work.IsCompleted ? "Completed" : "Not Completed")</td>
+                    <td><a asp-action="Update" asp-route-id="@work.Id" class="btn btn-warning">Update</a></td>
+                    <td><a asp-action="Remove" asp-route-id ="@work.Id" class="btn btn-danger">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,24 @@
+﻿@model WorkCreateDto
+
+<div class="container mb-3 my-2">
+    <form class="form-group" asp-action="Create" method="post">
+        <div class="mb-3">
+            <label>Task:</label>
+            <input asp-for="Title" class="form-control" />
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" asp-for="IsCompleted">
+            <label class="form-check-label" for="flexCheckDefault">
+                Completed
+            </label>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-success my-2  btn-sm">Add Task</button>
+        </div>
+    </form>
+
+    <div class="mb-3 text-danger" asp-validation-summary="All">
+
+    </div>
+</div>
+
