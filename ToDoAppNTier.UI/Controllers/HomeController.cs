@@ -18,7 +18,7 @@ namespace ToDoAppNTier.UI.Controllers
         public async Task<IActionResult> Index()
         {
             var response = await _workService.GetAll();
-            return View(response.Data);
+            return this.ResponseView(response);
         }
 
         public IActionResult Create()
